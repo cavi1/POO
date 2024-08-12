@@ -1,8 +1,8 @@
 accum=0
 
-for i in range(2): #una de las miles de formas de hacer un bucle
+for i in range(1,3): #una de las miles de formas de hacer un bucle
                     #en este caso el bucle itera el numero de veces determinado en el método range
-    rta = input("ingrese el entero " + str(i+1) + "\n")
+    rta = input("ingrese el entero " + str(i) + "\n")
     nro=int(rta)
     accum+=nro
 

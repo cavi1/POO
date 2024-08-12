@@ -6,4 +6,4 @@ altura_float=float(altura)
 
 IMC=peso_float/altura_float**2
 
-print(f"el índice de masa corporal es {IMC:.3f}") #notacion para restringir deicmales en la impresión de un flotante
+print(f"el índice de masa corporal es {IMC:.3f}") #notacion para restringir decismales en la impresión de un flotante

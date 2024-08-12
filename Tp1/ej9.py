@@ -5,6 +5,7 @@ import random
 #para flotantes: nro=random.uniform(floatPiso,floatTope)
 #para flotantes entre 0 y 1:  nro=random.random()
 #para numeros aleatorios de una lista selecta de valores: nro=random.choice([10,20,30,40,50,60,...,n]) no importa ni el orden ni el tipo de los datos en este caso
+#para numeros extremadamente grandes random.randbits(nrodebits) especifica exactamente el numero de bits que abarca el entero es decir 2 a la nrodebits
 
 ingreso_usuario=input("ingrese un numero entero: \n")
 
