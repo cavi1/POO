@@ -7,6 +7,10 @@
 #una cadena con el valor de todos los atributos.
 #● Instancie tres veces la clase persona y por cada instancia imprima en consola el
 #valor devuelto por el método toString
+
+#A la clase Persona del ejercicio 6 añada un nuevo método que retorne la edad haciendo
+#uso de la fecha de nacimiento. Imprima en consola la edad de tres instancias de la clase
+
 from datetime import datetime
 class Persona:
     __nombre=" "
@@ -39,8 +43,16 @@ class Persona:
     def to_string(self):
         return f"Nombre: {self.__nombre} Apellido: {self.__apellido} Nacimiento: {self.__nacimiento}"
     
+    def calc_edad(self):
         
+        ya_cumplio=False
+        
+        if datetime.now().month - self.__nacimiento.month >= 0 and datetime.now().day - self.__nacimiento.day >= 0 :
+            ya_cumplio=True
+        
+        if ya_cumplio:
+            return datetime.now().year-self.__nacimiento.year
+        else:
+            return datetime.now().year-self.__nacimiento.year-1
     
     
-        
-        
