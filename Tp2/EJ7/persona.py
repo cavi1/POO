@@ -1,26 +1,23 @@
-#Defina la clase Persona con los atributos
-#● Nombre de tipo string
-#● Apellido de tipo string
-#● Fecha de nacimiento de tipo Date
-#Genere además un constructor que reciba tres parámetros(uno por atributo), los
-#métodos de acceso(getters y setters) de cada atributo y un método toString que retorne
-#una cadena con el valor de todos los atributos.
-#● Instancie tres veces la clase persona y por cada instancia imprima en consola el
-#valor devuelto por el método toString
 
-#A la clase Persona del ejercicio 6 añada un nuevo método que retorne la edad haciendo
-#uso de la fecha de nacimiento. Imprima en consola la edad de tres instancias de la clase
 
 from datetime import datetime
+
 class Persona:
     __nombre=" "
     __apellido=" "
+    __sexo=" "
     __nacimiento= datetime
+    __edad=0
+    __estudia=bool 
+    __trabaja=bool
     
-    def __init__(self,nombre,apellido,nacimiento):
+    def __init__(self,nombre,apellido,nacimiento,estudia, trabaja, sex):
         self.__nombre=nombre
         self.__apellido=apellido
         self.__nacimiento=nacimiento
+        self.__sexo=sex
+        self.__estudia=estudia
+        self.__trabaja=trabaja
         
     def set_nombre(self,nombre):
         self.__nombre=nombre
@@ -40,6 +37,9 @@ class Persona:
     def get_nacimiento(self):
         return self.__nacimiento
     
+    def get_trabaja(self):
+        return self.__trabaja
+    
     def to_string(self):
         return f"Nombre: {self.__nombre} Apellido: {self.__apellido} Nacimiento: {self.__nacimiento}"
     
@@ -51,5 +51,7 @@ class Persona:
             return edad-1
         else:
             return edad
+    
+    
     
     
