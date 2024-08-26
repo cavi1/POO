@@ -27,11 +27,14 @@ class Familia:
     def cuenta_laburantes_familia(self):
         cont=0
         for persona in self.__integrantes:
-            if persona.get_trabaja(persona):
+            if persona.get_trabaja():
                 cont+=1
                 
+        return cont
+                
     
-    
+    def retorna_integrantes_familia(self):
+        return  self.__integrantes
     
         
     
