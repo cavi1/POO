@@ -1,4 +1,4 @@
-from ej3 import Alumno
+from Tp2.EJ3.ej3 import Alumno
 
 alumno1 = Alumno()
 alumno1=alumno1.iniciar()
