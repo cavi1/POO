@@ -3,9 +3,7 @@ from carta import Carta
 class Carta_especial(Carta):
     def __init__(self,nombre,equipo,pais):
         super().__init__(nombre,equipo,pais)
-        self.set_atributos_especial()
-        self.calcular_quimica()
-        
+        self.__habilidad_especial=habilidad_especial
         
     def set_atributos_especial(self):
         super().set_atributos(89,99)

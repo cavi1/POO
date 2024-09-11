@@ -7,11 +7,10 @@ import random
 
 class Carta(ABC):
 
-    def __init__(self, nombre, club, pais, habilidad_especial, velocidad, tiro, regate, defensa, pase, fisico, quimica, valoracion):
+    def __init__(self, nombre, club, pais, velocidad, tiro, regate, defensa, pase, fisico, quimica, valoracion):
         self._nombre=nombre
         self._club=club
         self._pais=pais
-        self._habilidad_especial=[]
         self._quimica=self.calcular_quimica()
         self._valoracion=self.calcular_valoracion()
         self.set_atributos()
