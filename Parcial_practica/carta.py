@@ -32,4 +32,6 @@ class Carta(ABC):
     @abstractmethod 
     def calcular_quimica(self):
         pass
+
+    
     
