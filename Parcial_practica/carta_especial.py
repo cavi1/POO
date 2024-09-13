@@ -17,7 +17,7 @@ class Carta_especial(Carta):
         self._fisico=int(min(99,self._fisico+ self._fisico*0.02))
         self._tiro=int(min(99,self._tiro+ self._tiro*0.02))
         
-    def calcular_quimica(self):
+    def calcular_quimica(self, pais_fav_plantilla, equipo_fav_plantilla):
         self._quimica= 100
     
     def set_habilidades_especiales(self):
@@ -29,4 +29,4 @@ class Carta_especial(Carta):
             lista.remove(temp)
 
     def carta_to_string(self):
-        return f"{self.__lista_habilidades_especiales}\n{super().carta_to_string()}"
+        return f"Habilidad Especial: \n{" ".join(self.__lista_habilidades_especiales)}\n{super().carta_to_string()}"

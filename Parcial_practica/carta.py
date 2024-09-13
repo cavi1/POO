@@ -37,4 +37,6 @@ class Carta(ABC):
         else:
             self._quimica=0
     
+    def get_quimica(self):
+        return self._quimica
     

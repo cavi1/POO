@@ -6,13 +6,12 @@ class Carta_oro(Carta):
         
         
     def set_atributos(self):
-        porcentaje=5
         super().set_atributos(74,90)
-        self._velocidad+=int((self._velocidad*porcentaje)/100)
-        self._tiro+=int((self._tiro*porcentaje)/100)
-        self._regate+=int((self._regate*porcentaje)/100)
-        self._fisico+=int((self._fisico*porcentaje)/100)
-        self._defensa+=int((self._defensa*porcentaje)/100)
-        self._pase+=int((self._pase*porcentaje)/100)
+        self._velocidad=int(min(90,self._velocidad+ self._velocidad*0.05))
+        self._tiro=int(min(90,self._tiro+ self._tiro*0.05))
+        self._regate=int(min(90,self._regate+ self._regate*0.05))
+        self._fisico=int(min(90,self._fisico+ self._fisico*0.05))
+        self._defensa=int(min(90,self._defensa+ self._defensa*0.05))
+        self._pase=int(min(90,self._pase+ self._pase*0.05))
         
     

@@ -18,5 +18,5 @@ class Carta_bronce_especial(Carta):
         self._pase+=2
     
     def carta_to_string(self):
-        return f"{self.__habilidad_especial}\n{super().carta_to_string()}"
+        return f"Habilidad Especial: \n{self.__habilidad_especial}\n{super().carta_to_string()}"
         
