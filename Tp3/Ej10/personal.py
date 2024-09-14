@@ -1,11 +1,15 @@
-from abc import ABC
+from abc import ABC, abstractmethod
 import random
 class Personal(ABC):
     def __init__(self,nombre,sector):
         self._antiguedad=random.randint(0,30)
         self._sector=sector
-        self.__horas_trabajadas_mes=random.randint(0,100)
+        self._horas_trabajadas_mes=random.randint(0,160)
     
     def get_horas_mensuales_trabajadas(self):
-        return self.__horas_trabajadas_mes
+        return self._horas_trabajadas_mes
+    
+    @abstractmethod
+    def get_categoria(self):
+        pass
     
