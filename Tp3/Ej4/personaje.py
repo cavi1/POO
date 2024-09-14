@@ -9,7 +9,7 @@
 
 from abc import ABC, abstractmethod
 
-class personaje(ABC)
+class personaje(ABC):
 
     def __init__(self, vida, nivelAtaque, nivelDefensa):
         self._vida = vida
