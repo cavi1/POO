@@ -1,0 +1,51 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><help_text></help_text><element><id>UMLClass</id><coordinates><x>30</x><y>70</y><w>210</w><h>90</h></coordinates><panel_attributes>creator
+--
+...
+--
++someOperation()
++createProduct():  Product</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>400</x><y>70</y><w>210</w><h>90</h></coordinates><panel_attributes>(interface)
+product
+--
++do stuff()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>120</x><y>150</y><w>30</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>240</x><y>90</y><w>180</w><h>40</h></coordinates><panel_attributes>lt=&lt;.
+&lt;&lt;use&gt;&gt;</panel_attributes><additional_attributes>160;20;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>60</x><y>200</y><w>90</w><h>40</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;70;20</additional_attributes></element><element><id>Relation</id><coordinates><x>60</x><y>210</y><w>30</w><h>100</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>Relation</id><coordinates><x>180</x><y>210</y><w>30</w><h>100</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>UMLClass</id><coordinates><x>180</x><y>290</y><w>160</w><h>80</h></coordinates><panel_attributes>concreteCreatorA
+--
+...
+--
++createProduct():  Product</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>0</x><y>290</y><w>160</w><h>80</h></coordinates><panel_attributes>concreteCreatorA
+--
+...
+--
++createProduct():  Product</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>490</x><y>150</y><w>30</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>120</x><y>200</y><w>90</w><h>40</h></coordinates><panel_attributes></panel_attributes><additional_attributes>10;20;70;20</additional_attributes></element><element><id>Relation</id><coordinates><x>430</x><y>210</y><w>90</w><h>30</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>70;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>490</x><y>210</y><w>90</w><h>30</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>70;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>430</x><y>210</y><w>30</w><h>90</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;70;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>550</x><y>210</y><w>30</w><h>90</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;70;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>540</x><y>280</y><w>160</w><h>30</h></coordinates><panel_attributes>concreteProductB
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>360</x><y>280</y><w>160</w><h>30</h></coordinates><panel_attributes>concreteProductA
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>190</x><y>390</y><w>500</w><h>270</h></coordinates><panel_attributes>PATRÓN FACTORY:
+EJEMPLO:
+Dentro de un juego, deseo diseñar enemigos. Cada enemigo será una clase que deriva de una clase padre entidad que les da  sus respectivas características comunes. Ahora quiero que el jugador, no memorice donde espawnea cada enemigo, por lo que creo un algoritmo que me genere enemigos aleatorios. Todo muy lindo. Pasado un tiempo, los jugadores desean enfrentarse a enemigos de mayor dificultad, por lo que debo diseñar algún algoritmo que lo resuelva. El problema es que no todos los jugadores lo desean, sino los que llevan mas tiempo en el juego, y diseñar algo de este estilo implica cambiar cosas en mi código que me afectan a todos los enemigos, y no quiero eso.  
+
+Acá es donde surge el patrón factory, ya que necesito encapsular la lógica de creación de enemigos para poder diseñarlos conforme el jugador lo requiera. Para esto debo crear una clase padre  que podría llamarse, por ejemplo "Enemy Factory", de esta derivan una multiplicidad de factorys en cargadas de la fabricacion de enemigos acrode a lo requerido. Por ejempo "GoombatFactory" ó "HighDificultEnemyFactory". Esto permite generalizar código y modificar implementaciones completas como y cuando se quiera.
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>570</x><y>20</y><w>50</w><h>40</h></coordinates><panel_attributes>1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>490</x><y>230</y><w>50</w><h>40</h></coordinates><panel_attributes>2</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>170</x><y>20</y><w>50</w><h>40</h></coordinates><panel_attributes>3</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>110</x><y>230</y><w>50</w><h>40</h></coordinates><panel_attributes>4</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>820</x><y>0</y><w>260</w><h>70</h></coordinates><panel_attributes>1. El Producto declara la interfaz, que es común a todos los objetos que puede producir la clase creadora y sus subclases.
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>820</x><y>80</y><w>260</w><h>70</h></coordinates><panel_attributes>2. Los Productos Concretos son distintas implementaciones de la
+interfaz de producto.
+
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>820</x><y>150</y><w>260</w><h>510</h></coordinates><panel_attributes>3. La clase Creadora declara el método fábrica que devuelve nuevos objetos de producto. Es importante que el tipo de retorno
+de este método coincida con la interfaz de producto.
+
+Puedes declarar el patrón Factory Method como abstracto para
+forzar a todas las subclases a implementar sus propias versiones del método. Como alternativa, el método fábrica base
+puede devolver algún tipo de producto por defecto.
+
+Observa que, a pesar de su nombre, la creación de producto no
+es la principal responsabilidad de la clase creadora. Normalmente, esta clase cuenta con alguna lógica de negocios central
+
+relacionada con los productos. El patrón Factory Method ayuda
+a desacoplar esta lógica de las clases concretas de producto.
+Aquí tienes una analogía: una gran empresa de desarrollo de
+software puede contar con un departamento de formación de
+programadores. Sin embargo, la principal función de la empresa sigue siendo escribir código, no preparar programadores.
+
+
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>820</x><y>660</y><w>260</w><h>160</h></coordinates><panel_attributes>4. Los Creadores Concretos sobrescriben el Factory Method base,
+de modo que devuelva un tipo diferente de producto.
+Observa que el método fábrica no tiene que crear nuevas instancias todo el tiempo. También puede devolver objetos existentes de una memoria caché, una agrupación de objetos, u
+otra fuente.
+
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element></diagram>

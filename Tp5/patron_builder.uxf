@@ -1,0 +1,50 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>470</x><y>140</y><w>120</w><h>120</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+Builder
+--
++reset()
++buildStepA()
++buildStepB()
++buildStepZ()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>650</x><y>150</y><w>150</w><h>100</h></coordinates><panel_attributes>Director
+--
+-builder:Builder
+--
++Director(builder)
++changeBuilder(builder)
+make(type)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>340</x><y>380</y><w>170</w><h>130</h></coordinates><panel_attributes>Concrete Builder1
+--
+-result: Product1
+--
++reset()
++buildStepA()
++buildStepB()
++buildStepZ()
++getResult(): Product1
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>560</x><y>380</y><w>170</w><h>130</h></coordinates><panel_attributes>Concrete Builder2
+--
+-result: Product2
+--
++reset()
++buildStepA()
++buildStepB()
++buildStepZ()
++getResult(): Product2
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>380</x><y>540</y><w>70</w><h>30</h></coordinates><panel_attributes>Product1
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>610</x><y>540</y><w>70</w><h>30</h></coordinates><panel_attributes>Product2
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>410</x><y>500</y><w>30</w><h>60</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>630</x><y>500</y><w>30</w><h>60</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;40;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>520</x><y>250</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>Relation</id><coordinates><x>520</x><y>290</y><w>100</w><h>30</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;80;10</additional_attributes></element><element><id>Relation</id><coordinates><x>460</x><y>290</y><w>100</w><h>30</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;80;10</additional_attributes></element><element><id>Relation</id><coordinates><x>460</x><y>290</y><w>30</w><h>110</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>590</x><y>290</y><w>30</w><h>110</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>580</x><y>190</y><w>90</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;70;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>590</x><y>40</y><w>70</w><h>30</h></coordinates><panel_attributes>Client
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>650</x><y>40</y><w>120</w><h>130</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>100;110;100;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>410</x><y>40</y><w>200</w><h>360</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>10;340;10;10;180;10</additional_attributes></element><element><id>Text</id><coordinates><x>440</x><y>590</y><w>290</w><h>100</h></coordinates><panel_attributes>Este es un diagrama de un constructor con todos los chiches, el director puede no estar, además, los constructores concretos pueden ser llamados para construir algo que no siga la interfaz común
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>450</x><y>100</y><w>50</w><h>30</h></coordinates><panel_attributes>1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>510</x><y>350</y><w>50</w><h>30</h></coordinates><panel_attributes>2</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>510</x><y>540</y><w>50</w><h>30</h></coordinates><panel_attributes>3</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>780</x><y>110</y><w>50</w><h>30</h></coordinates><panel_attributes>4</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>600</x><y>0</y><w>50</w><h>30</h></coordinates><panel_attributes>5</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>860</x><y>30</y><w>180</w><h>100</h></coordinates><panel_attributes>1. La interfaz Constructora declara pasos de construcción de producto que todos los tipos de objetos constructores tienen
+en común.
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>860</x><y>140</y><w>180</w><h>120</h></coordinates><panel_attributes>2. Los Constructores Concretos ofrecen distintas implementaciones de los pasos de construcción. Los constructores concretos
+pueden crear productos que no siguen la interfaz común.
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>860</x><y>270</y><w>180</w><h>130</h></coordinates><panel_attributes>3. Los Productos son los objetos resultantes. Los productos construidos por distintos objetos constructores no tienen que pertenecer a la misma jerarquía de clases o interfaz.
+
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>860</x><y>410</y><w>180</w><h>120</h></coordinates><panel_attributes>4. La clase Directora define el orden en el que se invocarán los
+pasos de construcción, por lo que puedes crear y reutilizar configuraciones específicas de los productos
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>860</x><y>540</y><w>220</w><h>260</h></coordinates><panel_attributes>5. El Cliente debe asociar uno de los objetos constructores con la
+clase directora. Normalmente, se hace una sola vez mediante
+los parámetros del constructor de la clase directora, que utiliza el objeto constructor para el resto de la construcción. No
+obstante, existe una solución alternativa para cuando el cliente pasa el objeto constructor al método de producción de la
+clase directora. En este caso, puedes utilizar un constructor diferente cada vez que produzcas algo con la clase directora.
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>170</x><y>140</y><w>230</w><h>60</h></coordinates><panel_attributes>Ej:Una casa con sus partes, una pizza con sus ingredientes etc
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element></diagram>
