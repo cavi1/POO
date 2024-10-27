@@ -1,0 +1,35 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>40</x><y>150</y><w>210</w><h>130</h></coordinates><panel_attributes>Publisher
+--
+-suscribers: Subscriber[]
+-mainState
+--
++subscribe(s:Subscriber)
++unsubscribe(s: Subscriber)
++notifySubscribers()
++mainBusinessLogic()
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>320</x><y>170</y><w>110</w><h>70</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+Subscriber
+--
++update(context)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>240</x><y>180</y><w>70</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;50;10</additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>180</y><w>60</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>40;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>330</x><y>290</y><w>110</w><h>90</h></coordinates><panel_attributes>Concrete
+Subscribers
+--
+...
+--
++update(context)
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>360</x><y>230</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>UMLClass</id><coordinates><x>100</x><y>410</y><w>100</w><h>30</h></coordinates><panel_attributes>Client</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>60</x><y>330</y><w>180</w><h>50</h></coordinates><panel_attributes>s=new ConcreteSubscriber()
+publisher.subscribe(s)
+
+bg=black</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>140</x><y>270</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>140</x><y>370</y><w>30</w><h>60</h></coordinates><panel_attributes>lt=-</panel_attributes><additional_attributes>10;10;10;40</additional_attributes></element><element><id>Relation</id><coordinates><x>230</x><y>330</y><w>120</w><h>40</h></coordinates><panel_attributes>lt=&lt;.</panel_attributes><additional_attributes>100;10;10;20</additional_attributes></element><element><id>Relation</id><coordinates><x>160</x><y>370</y><w>60</w><h>60</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>40;10;10;40</additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>50</x><y>40</y><w>120</w><h>40</h></coordinates><panel_attributes>BEHAVIORAL
+bg=red</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>210</x><y>100</y><w>40</w><h>40</h></coordinates><panel_attributes>1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>400</x><y>120</y><w>40</w><h>40</h></coordinates><panel_attributes>2</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>450</x><y>270</y><w>40</w><h>40</h></coordinates><panel_attributes>3</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>220</x><y>390</y><w>40</w><h>40</h></coordinates><panel_attributes>4</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>60</x><y>470</y><w>640</w><h>180</h></coordinates><panel_attributes>1- Publisher Maneja los eventos de interés para los
+suscriptores (cambio de estado o ejecución de algún método),
+los publica, permite suscripción y desuscribir.
+
+2- Suscriber es una interfaz que declara el método para notificar a los suscriptores.
+
+3- ConcreteSubscriber hacen alguna acción en base a lo que se notifica, todos las clases deben implementar la
+interfaz así el publisher no se ve acoplado a las clases concretas.
+
+4- El Client se encarga de crear los Publisher y Suscribers de forma separada y de hacer las asociaciones entre
+ellos y los updates.</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>580</x><y>150</y><w>270</w><h>120</h></coordinates><panel_attributes>Ejemplo: La interacción entre un canal de youtube y sus subscriptores. cadda vez que un canal sube videos, a los seguidores les llega una notificación. Pero esto ocurre solo si estan subscriptos, al efectuar la subscripción es donde se hace la conexión entre clases
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element></diagram>

@@ -1,0 +1,50 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>750</x><y>330</y><w>80</w><h>30</h></coordinates><panel_attributes>Client</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>780</x><y>350</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>750</x><y>410</y><w>90</w><h>60</h></coordinates><panel_attributes>&lt;&lt;interface&gt;&gt;
+component
+--
++execute()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>750</x><y>550</y><w>100</w><h>90</h></coordinates><panel_attributes>Concrete
+Component
+--
+...
+--
++execute()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>780</x><y>460</y><w>30</w><h>110</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;90</additional_attributes></element><element><id>Relation</id><coordinates><x>780</x><y>500</y><w>190</w><h>30</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;170;10</additional_attributes></element><element><id>Relation</id><coordinates><x>940</x><y>500</y><w>30</w><h>70</h></coordinates><panel_attributes>lt=.</panel_attributes><additional_attributes>10;10;10;50</additional_attributes></element><element><id>UMLClass</id><coordinates><x>910</x><y>550</y><w>190</w><h>90</h></coordinates><panel_attributes>Base Decorator
+--
+-wrapee: Component
+--
++BaseDecorator(c: Component)
++execute()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>950</x><y>630</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>10;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>1090</x><y>570</y><w>80</w><h>30</h></coordinates><panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes><additional_attributes>10;10;60;10</additional_attributes></element><element><id>Relation</id><coordinates><x>830</x><y>430</y><w>340</w><h>170</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;320;10;320;150</additional_attributes></element><element><id>UMLClass</id><coordinates><x>900</x><y>690</y><w>100</w><h>90</h></coordinates><panel_attributes>Concrete
+Decorators
+--
+...
+--
++execute()
++extra()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>710</x><y>380</y><w>40</w><h>40</h></coordinates><panel_attributes>1</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>710</x><y>520</y><w>40</w><h>40</h></coordinates><panel_attributes>2</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>1080</x><y>500</y><w>40</w><h>40</h></coordinates><panel_attributes>3</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>860</x><y>660</y><w>40</w><h>40</h></coordinates><panel_attributes>4</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>1240</x><y>360</y><w>430</w><h>360</h></coordinates><panel_attributes>1. El Componente declara la interfaz común tanto para wrappers
+como para objetos envueltos.
+
+2. Componente Concreto es una clase de objetos envueltos. Define el comportamiento básico, que los decoradores pueden
+alterar.
+
+3. La clase Decoradora Base tiene un campo para referenciar un
+objeto envuelto. El tipo del campo debe declararse como la interfaz del componente para que pueda contener tanto los componentes concretos como los decoradores. La clase decoradora
+base delega todas las operaciones al objeto envuelto.
+
+4. Los Decoradores Concretos definen funcionalidades adicionales que se pueden añadir dinámicamente a los componentes.
+Los decoradores concretos sobrescriben métodos de la clase
+decoradora base y ejecutan su comportamiento, ya sea antes o
+después de invocar al método padre.
+
+5. El Cliente puede envolver componentes en varias capas de decoradores, siempre y cuando trabajen con todos los objetos a
+través de la interfaz del componente.
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>1250</x><y>780</y><w>470</w><h>100</h></coordinates><panel_attributes>Esto funciona como una cebolla. Por ejemplo, creo un enemigo base, al cual le creo una armadura, esa armadura es su decorador base. Ahora quiero que mi enemigo tenga un casco, entonces creo un decorador de casco pero que, en vez de ser una clase asociada al enemigo base, es una clase que se comunica con el decorador de armadura. Luego, si quiero agregar un decorador nuevo, sería un componente del casco, y asi hasta el infinito
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>880</x><y>280</y><w>180</w><h>70</h></coordinates><panel_attributes>a=new ConcComponent()
+b=new ConcDecorator1(a)
+c=new ConcDecorator2(b)
+c.execute()
+
+bg=black</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>830</x><y>250</y><w>40</w><h>40</h></coordinates><panel_attributes>5</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>720</x><y>150</y><w>140</w><h>50</h></coordinates><panel_attributes>ESTRUCTURAL
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>Text</id><coordinates><x>310</x><y>300</y><w>340</w><h>150</h></coordinates><panel_attributes>Usar cuando:
+Se necesita añadir responsabilidades a objetos individualmente de forma dinámica y transparente (sin
+afectar a otros objetos).
+Para responsabilidades que pueden ser quitadas.
+Cuando la extensión con subclases es impráctica, pj. exceso de subclases, no se tiene visibilidad del padre,
+etc..
+style=wordwrap</panel_attributes><additional_attributes></additional_attributes></element></diagram>
