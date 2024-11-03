@@ -42,19 +42,13 @@ class Caja:
         self.__state.atender()
         
     def suspender(self):
-        self.__state.suspender()
-        if type(self.__state) != Suspendida:
-            self.__state = Suspendida()
+        self.__state.suspender(self)
         
     def cerrar(self):
-        self.__state.cerrar()
-        if type(self.__state) != Cerrada:
-            self.__state = Cerrada()
+        self.__state.cerrar(self)
         
     def abir(self):
-        self.__state.abrir()
-        if type(self.__state) != Abierta:
-            self.__state = Abierta()
+        self.__state.abrir(self)
     
         
     
@@ -65,15 +59,15 @@ class State(ABC):#interfaz de los estados
         pass
     
     @abstractmethod
-    def suspender(self):
+    def suspender(self, caja):
         pass
     
     @abstractmethod
-    def cerrar(self):
+    def cerrar(self, caja):
         pass
     
     @abstractmethod
-    def abrir(self):
+    def abrir(self, caja):
         pass
     
 class Abierta(State):
@@ -82,14 +76,16 @@ class Abierta(State):
         persona=Persona()
         print(f"El próximo cliente a ser atendido es {persona.get_nombre()}")#es random
         
-    def suspender(self):
+    def suspender(self, caja):
         print("La caja pasará de abierta a suspendida")
+        caja.set_estado(Suspendida())
         
-    def abrir(self):
+    def abrir(self, caja):
         print("La caja ya está abierta...")    
         
-    def cerrar(self):
+    def cerrar(self, caja):
         print("La caja pasará de abierta a cerrada")
+        caja.set_estado(Cerrada())
         
 class Suspendida(State):
     
@@ -100,27 +96,31 @@ class Suspendida(State):
         else:
             print(f"{persona.get_nombre()}, no te atiendo porque tenes {persona.get_edad()} años")
         
-    def suspender(self):
+    def suspender(self, caja):
         print("La caja ya está suspendida...")
         
-    def abrir(self):
-        print("La caja pasará de suspendida a abierta")    
+    def abrir(self,caja):
+        print("La caja pasará de suspendida a abierta") 
+        caja.set_estado(Abierta())   
         
-    def cerrar(self):
+    def cerrar(self, caja):
         print("La caja pasará de suspendida a cerrada")
+        caja.set_estado(Cerrada())
         
 class Cerrada(State):
     
     def atender(self):
         print("La caja está cerrada")
         
-    def suspender(self):
+    def suspender(self,caja):
         print("La caja pasará de cerrada a suspendida")
+        caja.set_estado(Suspendida())
         
-    def abrir(self):
-        print("La caja pasará de cerrada a abierta")    
+    def abrir(self, caja):
+        print("La caja pasará de cerrada a abierta")
+        caja.set_estado(Abierta())   
         
-    def cerrar(self):
+    def cerrar(self,caja):
         print("La caja ya estaba cerrada...")       
 
 cajaX=Caja()  

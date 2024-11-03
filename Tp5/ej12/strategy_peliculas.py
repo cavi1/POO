@@ -69,5 +69,5 @@ class Adulto(Publico):
 Nino1=Nino()
 Adolescente1=Adolescente()
 Adulto1=Adulto()
-netflix=Plataforma_streaming(Adulto1)
+netflix=Plataforma_streaming(Adulto1)#le pasas el que quieras
 netflix.get_catalogo()
