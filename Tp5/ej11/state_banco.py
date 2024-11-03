@@ -130,7 +130,9 @@ cajaX.suspender()
 cajaX.atender()
 cajaX.atender()
 cajaX.suspender()
-cajaX.abir()   
+cajaX.abir()
+cajaX.cerrar()
+cajaX.atender()  
 
     
 #Cada instancia de banco tiene una instancia de caja
