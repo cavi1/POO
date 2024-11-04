@@ -1,0 +1,62 @@
+Programa: es lo que se codifica
+
+Proceso: es el programa en tiempo de ejecucion, con sus recursos asignados
+
+Hilo (Thread): es una unidad de ejecucion dentro de un proceso, y comparte espacio y recursos con otros hilos que forman parte de un mismo proceso.
+                Combinados conforman al proceso como tal. La comunicación entre hilos del mismo proceso es mucho mas sencilla que intentar comunicar procesos.
+                Es la unidad mas básica de procesamiento de un proceso. Un proceso puede tener muchos hilos, un hilo no puede estar en muchos procesos
+                Como comparten espacio y recursos, su uso inadecuado puede ocasionar problemas por lo tanto hay que hacer una correcta sincronización de dichos hilos.
+                BENEFICIO: podemos usar mas recursos PROBLEMA: tenemos que gestionar bien la memoria
+
+Concurrencia: Es la asignacion de procesos/tareas/hilos por parte del sistema operativo hacia un unico procesador
+                para simular una ejecucion simultanea ante la vista del usuario.  Es decir el procesador alterna constantemente entre procesos
+
+Paralelismo: Es lo opuesto a concurrencia, es decir en este caso si existe una ejecución simultánea, pero esto requiere del hardware necesario
+            para efectuar dicha ejecución, es decir que se necesitan al menos dos procesadores. "Varios procesadores procesando procesos"
+
+Ambas son gestiones del SO, ninguna es mejor o peor que la otra, dependen del contexto para el que se requieran
+
+Particularidades de python: Python por defecto, a la hora de realizar procesos utiliza concurrencia, para evitar inconsistencias entre lo que ocurre con los hilos
+                            Es decir, utiliza un solo procesador SALVO cuando tiene que realiza operaciones muy pesadas como por ejemplo solicitudes a traves de la
+                            red, operaciones en base de datos, descarga de archivos grandes y lectura y escritura de archivos grandes
+
+                            Sin embargo, este multiprocesamiento puede ser forzado utilizando la libreria multiprocesing.
+
+                            Por ende para lograr paralelismo en codigo liviano debe usarse multiprocesing ( su sintaxis es similar al Threading)
+
+
+
+
+queue: sirve para realizar transferencia de datos entre clases en orden utilizando el multiprocesamiento
+
+pipe: sirve para realizar una transferencia de datos en forma de mensaje entre clases utilizando multiprocesamiento, existe un emisor y uno/varios receptores
+        chequea que el emisor envien un None para finaliza. Si se tienen dos emisores, se tienen dos Nones por lo tanto se finaliza cuando se reciban dos Nones no uno
+
+lock: bloqueos que sirven para asegurar que un hilo termine su ejecución de forma atómica(es decir ejecucion total de una porcion de codigo)
+        ejemplo una transaccion en una base de datos. Es importante para asegurar la exclusion mutua entre los procesos en el acceso a un recurso compartido
+        en el caso de los pipes, cuando se tienen varios emisores y un receptor, sirve para sincronizar las recepciones de los datos, es decir primero llega una y despues llega la otra
+
+pool: almacena una cantidad de datos dependiendo de la cantidad de procesadores que tenga tu computadora, esto significa que permite procesar en simultaneo la misma operacion
+        dependiendo de la cnatidad de procesadores que tenga tu PC. Esto es paralelismo
+
+daemon process (proceso demonio): es un proceso que se ejecuta en segundo plano (ejemplo: el contador de pasos de tu celular, un antivirus)
+                                    sirven para operaciones de tipo: 
+                                        Esporádico: ejemplo un log generado tras un error
+                                        Periodico: ejemplo guardar datos cada cierto tiempo
+                                        larga ejecucion: ejemplo monitoreo de recursos
+                                        el proceso padre de los daemon puede finalizar tranquilamente siempre que todos sus procesos sean daemon
+                                        , pero si estos procesos no fueran daemon, no podría.
+
+
+
+problemas de una mala gestion de memoria al rtabajar con hilos:
+
+    1)Race conditions : cuando multiples hilos o procesos intentan acceder o modificar datos compartidos al mismo tiempo. produce problemas de lectura y escritura
+                        e inconsistencias de datos
+
+    2)Starvacion : cuando un hilo/proceso queda bloqueado de forma permanente debido que necesitaba de otro hilo el cual tuvo algun problema (ej bucle infinito)
+
+    3)Deadlock : cuando dos o mas hilos/proceso se bloquean entre sí por la espera de recursos de otros hilos/procesos que nunca llegaron es consiguiente de starvation
+
+    
+
