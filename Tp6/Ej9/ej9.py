@@ -9,6 +9,8 @@ implementan la interfaz sensor, que es la siguiente:
 public interface Sensor {
 public Double sensar();
 }
+
+
 La boya debe generar 5 paquetes de datos y enviarlos al servidor, el cual se encarga de
 almacenarlos en su cola de paquetes.
 
@@ -90,6 +92,9 @@ class Servidor(Process):
         super().__init__()
         self.__cola_paquetes = cola_paquetes
         
+    def get_info(self):
+        return self.__cola_paquetes
+        
     def run(self):
         while not self.__cola_paquetes.empty():
             try:
@@ -106,6 +111,9 @@ class Servidor(Process):
             
     
     
+
+
+    
     
 packet_sharing=Queue()
 anem1=Anemometro()
@@ -121,3 +129,5 @@ if __name__ == '__main__':
     
     boya1.join()
     server.join()
+    
+    

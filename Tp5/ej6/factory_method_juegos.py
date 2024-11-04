@@ -31,6 +31,7 @@ class Concrete_creator_juego_fisico(Creator):
     
 class Juego(ABC):
     
+    @abstractmethod
     def get_precio(self):
         pass
 
